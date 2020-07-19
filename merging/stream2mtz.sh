@@ -1,5 +1,7 @@
 #!/bin/bash
 
+CREATE_XSCALE_TEMPLATE='/global/cfs/cdirs/lcls/SFX_automation/merging/create_xscale_template'
+
 # STREAM=
 # UCELL=
 : ${JOBNAME:="testing"}
@@ -42,9 +44,7 @@ for i in "$@"; do
     fi
 done
 
-#### EDIT
 cd $WORKDIR
-####/EDIT
 
 
 if [ ! -f "$UCELL" ]; then
@@ -84,7 +84,7 @@ if [ -f "$WORKDIR/"$JOBNAME"_create_xscale" ]; then
 fi
 
 
-head -n 7 /reg/data/ana03/scratch/zhensu/sfxtools/create-xscale >> $WORKDIR'/'$JOBNAME'_create_xscale'
+head -n 7 $CREATE_XSCALE_TEMPLATE >> $WORKDIR'/'$JOBNAME'_create_xscale'
 
 
 
@@ -108,7 +108,8 @@ echo 'printf("!SPACE_GROUP_NUMBER='$SGNUM'\n");' >> $WORKDIR'/'$JOBNAME'_create_
 echo 'printf("!UNIT_CELL_CONSTANTS=      '$LATTA'    '$LATTB'   '$LATTC' '$LATTALPHA' '$LATTBETA'    '$LATTGAMMA'\n");' >> $WORKDIR'/'$JOBNAME'_create_xscale'
 echo 'printf("!NUMBER_OF_ITEMS_IN_EACH_DATA_RECORD=5\n");' >> $WORKDIR'/'$JOBNAME'_create_xscale'
 echo 'printf("!X-RAY_WAVELENGTH= '$WAVELA'\n");' >> $WORKDIR'/'$JOBNAME'_create_xscale'
-tail -n 33 /reg/data/ana03/scratch/zhensu/sfxtools/create-xscale >> $WORKDIR'/'$JOBNAME'_create_xscale'
+#tail -n 33 /reg/data/ana03/scratch/zhensu/sfxtools/create-xscale >> $WORKDIR'/'$JOBNAME'_create_xscale'
+tail -n 33 $CREATE_XSCALE_TEMPLATE >> $WORKDIR'/'$JOBNAME'_create_xscale'
 
 cd $WORKDIR && chmod +x $JOBNAME'_create_xscale'
 

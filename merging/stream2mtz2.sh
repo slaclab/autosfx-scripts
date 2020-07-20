@@ -71,10 +71,10 @@ echo "... JOBNAME=$JOBNAME"
 echo "... PGROUP=$PGROUP"
 echo "... MAXADU=$MAXADU"
 
-echo ">>> cd $WORKDIR && process_hkl -i $STREAM -o $JOBNAME.hkl -y $PGROUP --max-adu=$MAXADU --scale"
+#echo ">>> cd $WORKDIR && process_hkl -i $STREAM -o $JOBNAME.hkl -y $PGROUP --max-adu=$MAXADU --scale"
 
 
-cd $WORKDIR && process_hkl -i $STREAM -o $JOBNAME.hkl -y $PGROUP --max-adu=$MAXADU --scale
+#cd $WORKDIR && process_hkl -i $STREAM -o $JOBNAME.hkl -y $PGROUP --max-adu=$MAXADU --scale
 
 
 

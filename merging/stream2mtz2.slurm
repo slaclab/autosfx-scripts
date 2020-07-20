@@ -9,7 +9,7 @@
 #SBATCH --qos=premium
 
 srun -n 1 -c 1 shifter \
-    ./stream2mtz.sh  \
+    ./stream2mtz2.sh  \
       stream:cxic0415.stream  \
       jobname:strep  \
       ucell:strep_more.cell  \

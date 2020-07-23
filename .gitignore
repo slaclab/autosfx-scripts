@@ -1,3 +1,0 @@
-docker/phasing/*.gz
-docker/phasing/sfxPhasing/
-slurm*.out

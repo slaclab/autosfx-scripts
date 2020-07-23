@@ -1,6 +1,9 @@
 #!/bin/bash
 
+export PATH=/img/XDS-INTEL64_Linux_x86_64/:$PATH
+source /img/ccp4-7.1/bin/ccp4.setup-sh
 CREATE_XSCALE_TEMPLATE='/global/cfs/cdirs/lcls/SFX_automation/merging/create_xscale_template'
+
 
 # STREAM=
 # UCELL=

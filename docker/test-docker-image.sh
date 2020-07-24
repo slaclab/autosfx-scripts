@@ -2,6 +2,20 @@
 
 echo "<<<<<<< BEGINNING TEST >>>>>>>>>"
 
+## PYTHON
+cat <<EOF >> test.py
+try:
+  import numpy
+except ImportError:
+  raise ImportError('error importing numpy')
+EOF
+if [ -x "$(command -v python)" ]; then
+  echo 'Goood: python is installed.'
+  python test.py
+else
+  echo 'Error: python is not installed.'
+fi
+
 ## PROCESS_HKL
 if [ -x "$(command -v process_hkl)" ]; then
   echo 'Goood: process_hkl is installed.'

@@ -3,7 +3,9 @@
 echo "<<<<<<< BEGINNING TEST >>>>>>>>>"
 
 ## PYTHON
-cat <<EOF >> test.py
+source /img/conda.local/env.local 
+source activate psana_base
+cat <<EOF > test.py
 try:
   import numpy
 except ImportError:
@@ -11,7 +13,7 @@ except ImportError:
 EOF
 if [ -x "$(command -v python)" ]; then
   echo 'Goood: python is installed.'
-  python test.py
+  python test.py && rm -f test.py
 else
   echo 'Error: python is not installed.'
 fi
